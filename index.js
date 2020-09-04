@@ -7,6 +7,7 @@ const connectDB = require('./config/db')
 const port = process.env.port || 1233;
 
 app.use(morgan("dev"));
+app.use(express.json({extended:false}))
 app.use("/api/users", usersRoutes);
 
 app.listen(port, ()=>{
